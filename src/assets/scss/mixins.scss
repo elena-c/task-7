@@ -1,0 +1,61 @@
+@mixin banner($i){
+   background: url("../images/banner#{$i}.png") center top/auto 100% no-repeat;
+}
+
+@mixin arrow-down($color){
+    content:"";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    z-index: 1;
+    border-top: 30px solid $color;
+}
+@mixin arrow($size, $weight, $color, $oriental) {
+    content:"";
+    position: absolute;
+    transform: rotate(45deg);
+    width: $size;
+    height: $size;
+    border: solid $weight $color;
+    @if $oriental == up {
+        border-right: none;
+        border-bottom: none;
+    }
+    @if $oriental == left {
+        border-right: none;
+        border-top: none;
+    }
+    @if $oriental == down {
+        border-left: none;
+        border-top: none;
+    }
+    @if $oriental == right {
+        border-left: none;
+        border-bottom: none;
+
+    }
+}
+@mixin arrow-border ($color: $color-white) {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+        border-bottom: 30px solid $color;
+        border-right: 30px solid transparent;
+        z-index: 1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+        border-bottom: 30px solid $color;
+        border-left: 30px solid transparent;
+    }
+}

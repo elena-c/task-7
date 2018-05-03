@@ -1,0 +1,154 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 25px;
+	position: relative;
+	z-index: 1000;
+
+	.logo {
+		z-index: 1;
+	}
+	.mobile-menu {
+		display: none;
+	}
+	.main-nav{
+		display: flex;
+		
+		>li {
+			position: relative;
+			z-index: 1;
+			border-radius: 5px 5px 0 0;
+
+			&:hover {
+				box-shadow: 0 0 5px $color-shadow;
+
+				>a {
+					background-color: $color-white;
+					border-radius: 5px 5px 0 0;
+
+					&::after {
+						border-color: $color-red;
+					}
+				}
+				.subnav-1{
+					display: block;	
+				}
+			}
+			>a {
+				display: inline-block;
+				font-size: 14px;
+				font-weight: bold;
+				padding: 5px 30px 5px 20px;
+				position: relative;
+				z-index: 1;
+
+				&::after {
+					@include arrow(7px, 3px, $color-shadow, down);
+					top: 8px;
+					right: 10px;
+				}
+			}
+		}
+	}
+	.subnav-1, .subnav-2 {
+		position: absolute;
+		display: none;
+		background-color: $color-white;
+		width: 200px;
+		box-shadow: 0 0 8px $color-shadow;
+		border-radius: 0 0 5px 5px;
+
+		>li {
+			font-size: 11px;
+			line-height: 28px;
+			font-weight: normal;
+			border-bottom: solid 1px $color-shadow;
+			position: relative;
+
+			&:last-child {
+				border: none;
+				border-radius: 0 0 5px 5px;
+			}
+			&:hover {
+				background-color: $color-red;
+				
+				>a {
+					color: $color-white;
+
+					&::before {
+						border-color: $color-white;
+					}
+				}
+			}
+		}
+		a {
+			display: block;
+			padding: 0 25px;
+			color: $color-grey;
+
+			&::before {
+				@include arrow(6px, 2px, $color-red, right);
+				top: 10px;
+				left: 10px;
+			}
+		}
+	}
+	.subnav-1 li:hover .subnav-2 {
+			display: block;
+	}
+				
+	.subnav-2 {
+		z-index: -1;
+		top:0;
+		left: 100%;
+	}
+}
+@media screen and (max-width: $tablet) {
+	header {
+		padding: 10px 10px 0;
+	}
+}
+@media screen and (max-width: $mobile) {
+    header{
+        background-color: $color-white;
+        box-shadow: 0 2px 3px $color-shadow;
+        align-items: center;
+        .logo img {
+            width: 80%;
+        }
+        .mobile-menu {
+            font-size: 16px;
+            display: block;
+            font-weight: 600;
+        }
+        .main-nav {
+            position: absolute;
+            left: 0;
+            flex-direction: column;
+            background: $color-white;
+            width: 100%;
+            display: none;
+            
+            &.active {
+                display: flex
+            }
+            >li {
+                border-top: solid 1px $color-shadow;
+				text-align: center;
+				>a {
+					width: 100%;
+				}
+                .subnav-1, .subnav-2 {
+                    position: static;
+                    margin:0 auto;
+                }
+                .subnav-1 {
+                    width: 90%;
+                }
+                .subnav-2 {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

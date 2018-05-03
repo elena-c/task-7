@@ -1,0 +1,20 @@
+/*reset imports*/
+@import "modules/reset";
+
+@import "vars";
+@import "mixins";
+
+@import "elements";
+/*modules*/
+@import "modules/header";
+@import "modules/footer";
+
+/*pages*/
+@import "pages/index";
+
+
+/*partials*/
+@import "partials/general";
+
+/*media*/
+@import "media/print";
