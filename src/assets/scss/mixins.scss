@@ -1,5 +1,5 @@
 @mixin banner($i){
-   background: url("../images/banner#{$i}.png") center top/auto 100% no-repeat;
+   background: url("../images/banner#{$i}.png") center top/cover no-repeat;
 }
 
 @mixin arrow-down($color){
@@ -45,9 +45,9 @@
         bottom: 0;
         left: 0;
         right: 50%;
-        border-bottom: 30px solid $color;
-        border-right: 30px solid transparent;
-        z-index: 1;
+        border-bottom: 34px solid $color;
+        border-right: 34px solid transparent;
+        z-index: 2;
     }
     &::after {
         content: "";
@@ -55,7 +55,8 @@
         bottom: 0;
         left: 50%;
         right: 0;
-        border-bottom: 30px solid $color;
-        border-left: 30px solid transparent;
+        border-bottom: 34px solid $color;
+        border-left: 34px solid transparent;
+        z-index: 2;
     }
 }

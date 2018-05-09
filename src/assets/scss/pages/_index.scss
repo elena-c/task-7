@@ -1,29 +1,41 @@
+#content {
+    @extend .wrapper;
+}
 .main-slideshow {
     position: relative;
     max-width: 1360px;
     width: 100%;
-    min-height: 645px;
+    @include arrow-border;
+
     &::after {
-        content: "";
         pointer-events: none;
-        position: absolute;
         top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to right, $color-white, transparent 15%), linear-gradient(to right, transparent 85%, $color-white);
+        background:  linear-gradient(to right, transparent 85%, $color-white) no-repeat;
         z-index: 1;
+    }
+    &::before {
+        pointer-events: none;
+        top: 0;
+        background: linear-gradient(to right, $color-white, transparent 15%) no-repeat;
+    }
+    &:hover
+    .swiper-button-prev,
+    &:hover
+    .swiper-button-next {
+        display: block;
     }
     .swiper-button-prev,
     .swiper-button-next {
+        display: none;
         background: $color-white;
         width: 70px;
         height: 70px;
         border-radius: 50%;
         box-shadow: 0 0 5px $color-shadow;
-        transition-duration: 0.3s;
-        &:hover {
-            transform: scale(1.2);
+        z-index: 100;
+        &:focus {
+            box-shadow: 0 0 3px 3px $color-shadow;
+            outline: none;
         }
     }
     .swiper-button-prev {
@@ -63,6 +75,8 @@
         transform: translateX(-50%);
         color: $color-red;
         background-color: $color-white;
+        font-size: 14px;
+        line-height: 21px;
         font-weight: 600;
         padding: 5px 10px;
         border: 2px solid $color-white;
@@ -71,6 +85,7 @@
         &::after {
             content: "";
             position: absolute;
+            bottom: 0;
             left: 50%;
             width: 35px;
             height: 35px;
@@ -78,7 +93,7 @@
             border: 2px solid $color-white;
             border-top: none;
             border-left: none;
-            transform: translate(-50%, 24%) rotate(45deg);
+            transform: translate(-50%, 55%) rotate(45deg);
             z-index: -1;
             transition-duration: 0.3s;
         }
@@ -91,20 +106,14 @@
         }
     }
     .swiper-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        min-height: 645px;
     }
 }
 
 .slide {
     position: relative;
     flex-shrink: 0;
-    padding: 0 200px;
-    @include arrow-border;
-    
+    padding: 0 200px;    
     .info {
         position: relative;
         margin: 200px 0 35px;
@@ -112,6 +121,7 @@
         width: 50%;
         min-width: 500px;
         font-size: 32px;
+        line-height: 1.5;
         border: solid 4px $color-white;
         border-left: none;
         border-right: none;
@@ -279,9 +289,12 @@
     }
     .column-block {
         width: 31%;
+        padding-bottom: 40px;
         img {
             width: 100%;
-        }
+            vertical-align: top;
+            margin-bottom: 3px;
+            }
         p {
             margin-bottom: 15px;
         }
@@ -297,18 +310,18 @@
         @include arrow-down($color-grey-light);
     }
 }
-
+.sub-title {
+    text-align: center;
+    margin-bottom: 35px;
+    display: block;
+}
 .carousel {
     padding: 60px 10px;
     margin: 0 -10px;
     overflow-x: hidden;
     position: relative;
-    h2,
-    h5 {
+    h2 {
         text-align: center;
-    }
-    h5 {
-        margin-bottom: 35px;
     }
     .carousel-btn-holder {
         position: absolute;
@@ -324,14 +337,23 @@
         width: 25px;
         height: 25px;
         transform: rotate(45deg);
+        &:focus {
+            outline: none;
+        }
     }
     .swiper-button-prev {
         border-top: none;
         border-right: none;
+        &:focus {
+            box-shadow: -2px 2px 0 blue;
+        }
     }
     .swiper-button-next {
         border-left: none;
         border-bottom: none;
+        &:focus {
+            box-shadow: 2px -2px 0 blue;
+        }
     }
     .gallery {
         .figure {
@@ -343,7 +365,9 @@
             padding-bottom: 20px;
 
             > img {
-                min-width: 100%;
+                width: 100%;
+                vertical-align: top;
+                margin-bottom: 3px; 
             }
             .swiper-wrapper {
                 align-items: flex-start;
@@ -378,22 +402,22 @@
 
 .container {
     padding: 60px 0;
-    h2,
-    h5 {
+    h2 {
         text-align: center;
     }
-    h5 {
-        margin-bottom: 35px;
-    }
-    .three-columns {
-        p {
-            max-width: 31%;
-        }
+    .three-columns{
+        p{
+        columns: 3 300px;
+        column-gap: 30px;}
     }
 }
 @media screen and (max-width: $tablet) {
 	.main-slideshow {
-		&::after {
+        &:hover .swiper-button-prev,
+        &:hover .swiper-button-next {
+            display: none;
+        }
+		&::after, &::before {
 			background: none;
 		}
 		.slide {
@@ -409,25 +433,12 @@
 @media screen and (max-width: $mobile) {
     .main-slideshow {
         overflow-y: scroll;
-        min-height: 400px;
-        .swiper-button-prev,
-        .swiper-button-next {
-            display: none;
+        .swiper-wrapper {
+            min-height: 400px;
         }
         .btn-down {
-            bottom: 40px;
-            font-size: 10px;
-            padding: 3px 7px;
-            &::after {
-                content: "";
-                width: 25px;
-                height: 25px;
-                background-color: $color-white;
-                border: 2px solid $color-white;
-                border-top: none;
-                border-left: none;
-                transform: translate(-50%, 24%) rotate(45deg);
-            }
+            bottom: 48px;
+            padding: 3px 15px;
         }
         .swiper-pagination-bullet {
             width: 8px;
@@ -500,10 +511,13 @@
             h1 {
                 font-size: 26px;
             }
+            p {
+                margin: 0;
+            }
         }
     }
     .carousel {
-        h5 {
+        .sub-title {
             padding-bottom: 40px;
         }
         .carousel-btn-holder {
@@ -521,12 +535,5 @@
     }
     .container{
         padding-bottom: 10px;
-        .three-columns{
-            flex-flow: column;
-            p {
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-        }
     }
 }

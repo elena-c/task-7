@@ -1,9 +1,9 @@
 /*general*/
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 body, html {
-	font:14px/1.5 $font-regular;
+	font:15px/24px $font-regular;
 	height:100%;
 	background: white;
 	color: $color-black;
@@ -18,13 +18,17 @@ body, html {
 #content {
 	flex: 1 0 auto;
 }
-#content, header, footer {
-	padding-left: calc(50% - 480px);
-	padding-right: calc(50% - 480px);
+.wrapper {
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
 }
 .flex {
 	display: flex;
 	justify-content: space-between;
+}
+p {
+	margin-bottom: 24px;
 }
 a {
 	color:inherit;
@@ -34,7 +38,7 @@ a {
 	body,html {
 		min-width: 768px;
 	}
-	#content, header, footer {
+	#content, footer {
 		padding: 0 10px;
 	}
 }

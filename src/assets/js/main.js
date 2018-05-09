@@ -1,8 +1,5 @@
-function toogleMenu(){
-    document.getElementById('main-nav').classList.toggle('active')
-}
-
 $(document).ready(function(){
+    //scroll to link id
     $(".page").on("click", "a", function (event) {
         event.preventDefault();
         let id  = $(this).attr('href');
@@ -11,7 +8,25 @@ $(document).ready(function(){
             $('body,html').animate({scrollTop: item.offset().top}, 400);
         }
     });
-    
+    //sidebar
+    let menu = $("#main-nav")
+    let body = $("body");
+    let isActive = false
+    function handleMenuClick(e){
+        if(isActive){
+            menu.removeClass('active')
+            body.css('overflow', 'initial')
+        }else {
+            menu.addClass('active')
+            body.css('overflow', 'hidden')
+        }
+        isActive = !isActive
+    }
+    $("header")
+        .on("click", ".mobile-menu", handleMenuClick)
+        .on("click", "#main-nav", handleMenuClick)
+        .on('click', '.main-nav', e =>  e.stopPropagation())
+    //swiper
     new Swiper ('.swiper-container', {
         slideClass: 'slide',
         autoplay: true,
