@@ -1,12 +1,11 @@
 $(document).ready(function(){
     //scroll to link id
-    $(".page").on("click", "a", function (event) {
-        event.preventDefault();
-        let id  = $(this).attr('href');
-        let item = id.length > 1 && $(id);
-        if(item){
-            $('body,html').animate({scrollTop: item.offset().top}, 400);
-        }
+    $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 400, 'linear');
     });
     //sidebar
     let menu = $("#main-nav")
@@ -44,10 +43,15 @@ $(document).ready(function(){
     })
     new Swiper ('.carousel', {
             breakpoints: {
-                767: {
+                960: {
+                    slidesPerView: 2,
+                    spaceBetween: '2%'
+                },
+                600: {
                     slidesPerView: 1,
-                    spaceBetween: 10
-                }
+                    spaceBetween: '4%'
+                },
+
             },
             slideClass: 'figure',
             slidesPerView: 3,
@@ -57,29 +61,19 @@ $(document).ready(function(){
             prevEl: '.swiper-button-prev',
         },
     })
-    new Swiper ('#figure-1', {
-        slideClass: 'slide-img-1',
-        nested: true,
-        touchReleaseOnEdges: true,
-        pagination: {
-        el: '.pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '"></span>';
-        },
-        },
-    })
-    new Swiper ('#figure-2', {
-        slideClass: 'slide-img-2',
-        nested: true,
-        touchReleaseOnEdges: true,
-        pagination: {
-            el: '.pagination',
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '"></span>';
+    $('.figure-gallery').each((i, el) => {
+        new Swiper (el, {
+            slideClass: 'slide-img',
+            nested: true,
+            touchReleaseOnEdges: true,
+                pagination: {
+                el: '.pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '"></span>';
+                },
             },
-        },
+        })
     })
 });
 

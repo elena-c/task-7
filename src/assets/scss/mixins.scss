@@ -20,6 +20,7 @@
     width: $size;
     height: $size;
     border: solid $weight $color;
+
     @if $oriental == up {
         border-right: none;
         border-bottom: none;
@@ -27,6 +28,7 @@
     @if $oriental == left {
         border-right: none;
         border-top: none;
+        align-self: center;
     }
     @if $oriental == down {
         border-left: none;
@@ -35,7 +37,7 @@
     @if $oriental == right {
         border-left: none;
         border-bottom: none;
-
+        align-self: center;
     }
 }
 @mixin arrow-border ($color: $color-white) {

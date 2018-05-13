@@ -1,0 +1,112 @@
+.carousel {
+    padding: 60px 10px 0;
+    margin: 0 -10px;
+    overflow-x: hidden;
+    position: relative;
+    h2 {
+        text-align: center;
+    }
+    .carousel-btn-holder {
+        position: absolute;
+        top: 75px;
+        right: 15px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        display: inline-block;
+        background: none;
+        border: solid 5px $color-shadow;
+        width: 25px;
+        height: 25px;
+        transform: rotate(45deg);
+        &:focus {
+            outline: none;
+        }
+    }
+    .swiper-button-prev {
+        border-top: none;
+        border-right: none;
+        &:focus {
+            box-shadow: -2px 2px 0 blue;
+        }
+    }
+    .swiper-button-next {
+        border-left: none;
+        border-bottom: none;
+        &:focus {
+            box-shadow: 2px -2px 0 blue;
+        }
+    }
+}
+.gallery {
+    padding-bottom: 30px;
+    .figure {
+        position: relative;
+        flex-shrink: 0;
+        overflow: hidden;
+        background-color: $color-white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        padding-bottom: 20px;
+        width: 31%;
+        margin-bottom: 30px;
+
+        > img {
+            width: 100%;
+            vertical-align: top;
+            margin-bottom: 3px; 
+        }
+        .swiper-wrapper {
+            align-items: flex-start;
+            height: initial;
+
+            img {
+                flex-shrink: 0;
+            }
+        }
+        .pagination {
+            position: absolute;
+            top: 10px;
+            bottom: auto;
+            left: 80%;
+            z-index: 1;
+        }
+        .swiper-pagination-bullet {
+            background: $color-white;
+            opacity: 0.7;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+        h4,
+        p {
+            text-align: center;
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .carousel {
+        .sub-title {
+            padding-bottom: 40px;
+        }
+        .carousel-btn-holder {
+            top: 150px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+}
+@media screen and (max-width: $tablet-portrait) {
+    .gallery {
+        .figure {
+                width: 48%;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .gallery {
+        .figure {
+            width: 98%;
+        }
+    }
+}

@@ -5,6 +5,7 @@ header {
 	padding-top: 25px;
 	position: relative;
 	z-index: 1000;
+	border-bottom: solid 5px $color-grey-light;
 
 	.mobile-menu {
 		display: none;
@@ -42,7 +43,7 @@ header {
 
 				&::after {
 					@include arrow(7px, 3px, $color-shadow, down);
-					top: 8px;
+					top: 10px;
 					right: 10px;
 				}
 			}
@@ -80,13 +81,12 @@ header {
 			}
 		}
 		a {
-			display: block;
+			display: flex;
 			padding: 0 25px;
 			color: $color-grey;
 
 			&::before {
 				@include arrow(6px, 2px, $color-red, right);
-				top: 10px;
 				left: 10px;
 			}
 		}
@@ -106,13 +106,14 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
+	border: none;
 }
 @media screen and (max-width: $tablet-portrait) {
     .landing-header {
         background-color: $color-white;
-        box-shadow: 0 2px 3px $color-shadow;
 		align-items: center;
 		padding: 10px;
+		border-bottom: solid 5px $color-grey-light;
 
         .logo img {
             width: 80%;

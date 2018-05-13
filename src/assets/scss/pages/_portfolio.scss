@@ -1,0 +1,81 @@
+.two-columns {
+    h2 {
+        font-size: 44px;
+        font-weight: 400;
+    }
+    p {
+        font-size: 13px;
+    }
+    .more {
+        color: $color-red;
+        font-weight: 800;
+        font-size: 16px;
+        &::after {
+            @include arrow(8px, 5px, $color-shadow, right);
+        }                        
+        &:hover {
+            color: $color-shadow;
+            &::after {
+                border-color: $color-red;
+            }
+        }
+    }
+}
+.illustration {
+    position: relative;
+    margin: 0 -220px 30px;
+    padding: 50px 220px 90px;
+    background-position: center center;
+    @include arrow-border;
+    .title {
+        margin-bottom: 8px;
+        color: darken($color-shadow, 10);
+        font-weight: 800;
+        font-size: 15px;
+    }
+    h2{
+        width: 300px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    } 
+    p {
+        width: 280px;
+    }
+}
+.titles {
+    min-width: 300px;
+}
+.filter {
+    width: 280px;
+    position: relative;
+    &::after {
+        @include arrow (7px, 4px, $color-shadow, down);
+        top: 12px;
+        right: 15px;
+    }
+    select {
+        appearance: none;
+        width: 280px;
+        padding: 10px;
+        color: $color-grey;
+        border-radius: 3px;
+    }
+}
+@media screen and (max-width: $mobile) {
+    .two-columns {
+        padding-top: 10px;
+        .col {
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        h2 {
+            font-size: 30px;
+            font-weight: 800;
+        }
+    }    
+    .filter {
+        margin: 0 auto 40px;
+    }
+}

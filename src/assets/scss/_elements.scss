@@ -31,11 +31,11 @@ p, copyright {
     position: relative;
     padding-right: 20px;
     transition-duration: 0.3s;
+    display: inline-flex;
     &::after {
         @include arrow(8px, 5px, $color-white, right);
-        top: 5px;
-        right: 0;
         transition-duration: 0.3s;
+        right: 0;
     }
     &:hover {
         color: $color-red;
@@ -44,20 +44,9 @@ p, copyright {
         }
     }
 }
-@media screen and (max-width: $mobile) {
-    .more {
-        font-size: 12px;
-        font-weight: 600;
-        &::after {
-            @include arrow(6px, 3px, $color-white, right);
-            top: 2px;
-        }    
-    }
-}
-
 .btn-red {
     position:relative;
-    display: block;
+    display: flex;
     background-color: $color-red;
     box-shadow: inset 0 -3px 4px 2px rgba(0,0,0,.4);
     color: $color-white;
@@ -68,10 +57,19 @@ p, copyright {
 
     &::after {
         @include arrow(6px, 3px, $color-white, right);
-        top: 13px;
         right: 10px;
     }
     &:hover {
         background-color: darken($color-red, 10%);
     }
 }
+@media screen and (max-width: $mobile) {
+    .more {
+        font-size: 14px;
+        font-weight: 600;
+        &::after {
+            @include arrow(6px, 3px, $color-white, right);
+        }    
+    }
+}
+

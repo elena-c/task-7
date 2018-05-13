@@ -15,17 +15,39 @@ body, html {
 	display: flex;
 	flex-direction: column;
 }
-#content {
-	flex: 1 0 auto;
-}
 .wrapper {
 	max-width: 960px;
 	width: 100%;
 	margin: 0 auto;
 }
+#content {
+	flex: 1 0 auto;
+	@extend .wrapper;
+}
 .flex {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+}
+.breadcrumbs {
+	margin: 11px 0 30px;
+	font-size: 11px;
+	font-weight: 600;
+	color: $color-grey-dark;
+
+	a {
+	position: relative;
+	color: $color-shadow;
+	padding-right: 17px;
+	display: inline-flex;
+		&:hover {
+			text-decoration: underline;
+		}
+		&::after {
+			@include arrow(4px, 2px, $color-shadow, right);
+			right: 5px;
+		}
+	}
 }
 p {
 	margin-bottom: 24px;
@@ -45,5 +67,8 @@ a {
 @media screen and (max-width: $mobile) {
 	body,html {
 		min-width: 320px;
-    }
+	}
+	.flex {
+		justify-content: space-around;
+	}
 }
