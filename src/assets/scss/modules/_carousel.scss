@@ -6,11 +6,12 @@
     h2 {
         text-align: center;
     }
-    .carousel-btn-holder {
-        position: absolute;
-        top: 75px;
-        right: 15px;
-    }
+}
+.carousel-btn-holder {
+    position: absolute;
+    z-index: 100;
+    top: 75px;
+    right: 15px;
     .swiper-button-prev,
     .swiper-button-next {
         position: static;
@@ -50,6 +51,9 @@
         padding-bottom: 20px;
         width: 31%;
         margin-bottom: 30px;
+        &:hover {
+            text-decoration: underline;
+        }
 
         > img {
             width: 100%;
@@ -89,11 +93,11 @@
         .sub-title {
             padding-bottom: 40px;
         }
-        .carousel-btn-holder {
-            top: 150px;
-            right: 50%;
-            transform: translateX(50%);
-        }
+    }
+    .carousel-btn-holder {
+        top: 150px;
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 @media screen and (max-width: $tablet-portrait) {

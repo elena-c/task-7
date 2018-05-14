@@ -61,6 +61,21 @@ $(document).ready(function(){
             prevEl: '.swiper-button-prev',
         },
     })
+    new Swiper ('.portfolio-slides', {
+        slideClass: 'slide1',
+        autoplay: true,
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+        },
+        },
+    })
     $('.figure-gallery').each((i, el) => {
         new Swiper (el, {
             slideClass: 'slide-img',
