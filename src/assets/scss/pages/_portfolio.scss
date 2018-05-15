@@ -66,12 +66,8 @@
 }
 @media screen and (max-width: $mobile) {
     .two-columns {
-        padding-top: 10px;
         .col {
             margin-bottom: 30px;
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
         h2 {
             font-size: 30px;
