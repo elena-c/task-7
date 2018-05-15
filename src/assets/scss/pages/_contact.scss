@@ -1,0 +1,206 @@
+.contact-inform {
+    position: relative;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 0 115px;
+
+    h2 {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
+    p {
+        color: $color-grey-dark;
+    }
+    a {
+        color: $color-black;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.NY-panorama {
+    position: relative;
+    background: linear-gradient(to right, transparent 85%, $color-white) no-repeat,
+    linear-gradient(to right, $color-white, transparent 15%) no-repeat,
+    url(../images/contact-ny.png);
+
+    margin: 0 -220px;
+    @include arrow-border;
+
+}
+.contact-form {
+    margin: 0 220px;
+    padding: 60px 200px 80px;
+    text-align: center;
+    background: rgba(255,255,255,.8);
+
+    .titles {
+        margin-bottom: 30px;
+        h2 {
+            line-height: 30px;
+            text-transform: uppercase;
+        }
+    }
+    textarea {
+        width: 100%;
+    }
+    .flex {
+        .form-group {
+            width: 48%;
+        }
+    }
+    p {
+        margin: 0;
+        color: $color-black;
+        font-size: 12px;
+        span {
+            color: red;
+            font-weight: 700;
+        }
+    }
+    .btn-red {
+        width: 48%;
+        border: none;
+    }
+}
+.postcode-form {
+    position: relative;
+    text-align: center;
+    padding: 60px 0 50px;
+    .titles {
+        margin-bottom: 30px;
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+    .form-group {
+        width: 35%;
+        min-width: 260px;
+        margin: 0 auto;
+        display: flex;
+        button {
+            @include arrow(13px, 6px, $color-shadow, right);
+            right: 0;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        input {
+            width: 90%;
+            margin: 0;
+        }
+    }
+}
+.map-block {
+    position: relative;
+    margin: 0 -220px;
+    overflow: hidden;
+    @include arrow-border;
+    &::after {
+        pointer-events: none;
+        top: 0;
+        background:  linear-gradient(to right, transparent 85%, $color-white) no-repeat;
+    }
+    &::before {
+        pointer-events: none;
+        top: 0;
+        background: linear-gradient(to right, $color-white, transparent 15%) no-repeat;
+    }
+}
+.map {
+    position: relative;
+    right: -50%;
+    display: inline-block;
+
+    img {
+        position: relative;
+        left: -50%;
+        vertical-align: top;
+    }
+}
+.two-columns {
+    .col-2 {
+        width: 60%;
+    }
+    .col-1 {
+        width: 30%;
+        margin-bottom: 30px;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+@media screen and (max-width: $tablet-portrait) {
+    .NY-panorama {
+        background: url(../images/contact-ny.png);
+        margin: 0;
+    }
+    .contact-form {
+        margin: 0;
+        padding: 60px 10px 80px;
+    }   
+}
+@media screen and (max-width: $mobile) {
+    .contact-inform {
+        width: auto;
+        margin: 0 -10px;
+        padding: 30px 10px 60px;
+        border: 5px solid $color-grey-light;
+        border-left: none;
+        border-right: none;
+        &.pierce-white{
+            &::after {
+                bottom: 0;
+            }
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    .NY-panorama {
+        background: none;
+    }
+    .contact-form {
+        padding: 30px 10px;
+
+        .titles {
+            h2 {
+                font-size: 18px;
+            }
+        }
+        .flex {
+            .form-group {
+                width: 100%;
+            }
+        }
+        .btn-red {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 0 auto;
+        }
+    }
+    .postcode-form {
+        .titles {
+            h2 {
+                font-size: 18px;
+            }        
+        }
+    }
+    .two-columns {
+        .col-2 {
+            width: 100%;
+        }
+        .col-1 {
+            width: 100%;
+        }
+    }
+}

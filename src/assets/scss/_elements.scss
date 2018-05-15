@@ -21,9 +21,27 @@ h4 {
 h5 {
     font-size: 15px;
 }
-p, copyright {
+p {
+    margin-bottom: 24px;
     color: $color-grey-dark;
 }
+copyright {
+    color: $color-grey-dark;
+}
+a {
+	color:inherit;
+	text-decoration: none;
+}
+.pierce-grey {
+    &::after {
+        @include arrow-down($color-grey-light);
+    }
+}
+.pierce-white {
+	&::after {
+		@include arrow-down($color-white);
+	} 
+  }
 .more {
     color: $color-white;
     font-weight: 800;
@@ -45,15 +63,17 @@ p, copyright {
     }
 }
 .btn-red {
-    position:relative;
+    position: relative;
     display: flex;
     background-color: $color-red;
     box-shadow: inset 0 -3px 4px 2px rgba(0,0,0,.4);
     color: $color-white;
     font-size: 12px;
+    line-height: 1;
     font-weight: 700;
-    padding: 10px 15px;
+    padding: 12px 15px;
     transition-duration: 0.3s;
+    cursor: pointer;
 
     &::after {
         @include arrow(6px, 3px, $color-white, right);
@@ -61,6 +81,35 @@ p, copyright {
     }
     &:hover {
         background-color: darken($color-red, 10%);
+    }
+}
+.form-group {
+    position: relative;
+    input {
+        width: 100%;
+    }
+    label {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        font-size: 12px;
+        pointer-events: none;
+        
+        span {
+          color: red;
+          font-weight: 700;
+        }
+    }
+}
+.field {
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    border: 2px solid $color-shadow;
+    border-radius: 3px;
+    &:focus {
+      + label {
+        display: none;
+      }
     }
 }
 @media screen and (max-width: $mobile) {

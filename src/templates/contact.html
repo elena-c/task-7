@@ -1,0 +1,95 @@
+{% include "partials/_head.html" %}
+
+
+<div class="page">
+    
+{% include "partials/_header.html" %}
+    <div id="content">
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>Contact</span>
+        </div>
+        <div class="contact-inform pierce-white">
+            <h2>L'ETS TALK!</h2>
+            <P>Approachable and friendly, we welcome the opportunity to chat about how we can help you get more from your digital project. Whether you want a free, no obligation consultation or just a quick chat please give us a call on 
+                <a href="callto:01234 567 890">01234 567 890</a> 
+            </P>
+            <p>Or complete the form below and we'll get right back to you.</p>
+        </div>
+        <div class="NY-panorama">
+            <form class="contact-form">
+                <div class="titles">
+                    <h2>Make an enquiry.</h2>
+                    <h2>We’ll reply today - we promise!</h2>
+                </div>
+                <div class="form-group">
+                    <textarea class="field" cols="30" rows="10" required></textarea>
+                    <label>How can we help <span>*</span></label>
+                </div>
+                <div class="flex">
+                    <div class="form-group">
+                        <input class="field" type="text" required>
+                        <label>Name <span>*</span></label>
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="text">
+                        <label>Company</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="email" required>
+                        <label>Email address <span>*</span></label>
+                    </div>
+                    <div class="form-group">
+                        <input class="field" type="tel" required>
+                        <label>Telephone <span>*</span></label>
+                    </div>
+                </div>
+                <div class="flex-wrap-reverse">
+                    <p>Fields marked with <span>*</span> are mandatory</p>
+                    <button class="btn-red">GET IN TOUCH</button>
+                </div>
+            </form>
+        </div>
+        <div class="postcode-form pierce-white">
+            <div class="titles">
+                <h2>Want to come and see us in person?</h2>
+                <p>We’ll put the kettle on</p>
+            </div>
+            <p>Need Directions? Tell us where you’re traveling from...</p>
+            <div class="form-group">
+                <input class="field" type="text">
+                <label>Your postcode</label>
+                <button></button>
+            </div>
+
+        </div>
+        <div class="map-block">
+            <div class="map">
+                <img src="../assets/images/map.png" alt="map">
+            </div>
+        </div>
+        <div class="two-columns flex">
+            <div class="col-2">
+            <h4>Agency Pro</h4>
+            <p>You’ll find us in the old cotton mill on Luck Lane, just behind the Horse & Shoe brewery and taps. 
+                Parking is plentiful and it’s free, so you don’t need to dig deep for any loose change.
+            </p>
+            <p>On arrival, please come into our reception, someone will be there to welcome you.</p>
+        </div>
+        <div class="col-1">
+            <h4>Contact Details</h4>
+            <ul>
+                <li><a href="#">Agency Pro</a></li>
+                <li><a href="#">Address Line 1,</a></li>
+                <li><a href="#">Address Line 2,</a></li>
+                <li><a href="#">Address Line 3,</a></li>
+                <li><a href="#">Country,</a></li>
+                <li><a href="#">Post Code</a></li>
+            </ul>
+        </div>
+
+        </div>
+    
+    </div>    <!-- / content -->
+
+{% include "partials/_footer.html" %}

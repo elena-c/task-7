@@ -280,11 +280,6 @@
 .columns  {
     position: relative;
     padding: 30px 0 60px;
-   &.pierce {
-        &::after {
-            @include arrow-down($color-white);
-        }
-    }
     .col {
         width: 31%;
         min-width: 300px;
@@ -305,11 +300,6 @@
     padding: 0 9999px;
     margin: 0 -9999px;
     position: relative;
-}
-.pierce {
-    &::after {
-        @include arrow-down($color-grey-light);
-    }
 }
 .sub-title {
     text-align: center;

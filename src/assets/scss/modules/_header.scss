@@ -109,11 +109,13 @@ header {
 	border: none;
 }
 @media screen and (max-width: $tablet-portrait) {
-    .landing-header {
+	header {
         background-color: $color-white;
 		align-items: center;
 		padding: 10px;
-		border-bottom: solid 5px $color-grey-light;
+		border: none;
+		box-shadow: 0 0 5px $color-grey;
+
 
         .logo img {
             width: 80%;

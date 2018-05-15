@@ -1,4 +1,9 @@
 .two-columns {
+    position: relative;
+    .col {
+        width: 31%;
+        min-width: 300px;
+    }
     h2 {
         font-size: 44px;
         font-weight: 400;
@@ -25,6 +30,7 @@
     position: relative;
     margin: 0 -220px 30px;
     padding: 50px 220px 90px;
+    @include banner(2);
     background-position: center center;
     @include arrow-border;
     .title {
@@ -41,9 +47,6 @@
     p {
         width: 280px;
     }
-}
-.titles {
-    min-width: 300px;
 }
 .filter {
     width: 280px;

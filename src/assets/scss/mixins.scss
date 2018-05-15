@@ -10,7 +10,7 @@
     transform: translateX(-50%);
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-    z-index: 1;
+    z-index: 100;
     border-top: 30px solid $color;
 }
 @mixin arrow($size, $weight, $color, $oriental) {
@@ -44,8 +44,8 @@
     &::before {
         content: "";
         position: absolute;
-        bottom: -1px;
-        left: -3px;
+        bottom: 0;
+        left: 0;
         right: 50%;
         border-bottom: 34px solid $color;
         border-right: 34px solid transparent;
@@ -54,9 +54,9 @@
     &::after {
         content: "";
         position: absolute;
-        bottom: -1px;
+        bottom: 0;
         left: 50%;
-        right: -3px;
+        right: 0;
         border-bottom: 34px solid $color;
         border-left: 34px solid transparent;
         z-index: 2;
