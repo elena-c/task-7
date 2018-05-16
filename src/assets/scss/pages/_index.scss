@@ -7,13 +7,13 @@
     &::after {
         pointer-events: none;
         top: 0;
-        background:  linear-gradient(to right, transparent 85%, $color-white) no-repeat;
+        background:  linear-gradient(to right, rgba(255,255,255,0) 85%, $color-white) no-repeat;
         z-index: 1;
     }
     &::before {
         pointer-events: none;
         top: 0;
-        background: linear-gradient(to right, $color-white, transparent 15%) no-repeat;
+        background: linear-gradient(to right, $color-white, rgba(255,255,255,0) 15%) no-repeat;
     }
     &:hover .swiper-button-prev,
     &:hover .swiper-button-next {
@@ -36,17 +36,13 @@
     .swiper-button-prev {
         &::before {
             @include arrow(25px, 4px, $color-red, left);
-            top: 50%;
             right: 15px;
-            transform: translateY(-50%) rotate(45deg);
         }
     }
     .swiper-button-next {
         &::before {
             @include arrow(25px, 4px, $color-red, right);
-            top: 50%;
             left: 15px;
-            transform: translateY(-50%) rotate(45deg);
         }
     }
     .swiper-pagination {
@@ -129,8 +125,9 @@
         }
         h2 {
             font-size: 35px;
+            line-height: 50px;
         }
-        p{
+        p {
             text-transform: none;
         }
     }
@@ -239,6 +236,7 @@
     .center-box {
         h2 {
             font-size: 48px;
+            line-height: 72px;
         }
     }
     .marker {
@@ -373,6 +371,7 @@
             }
             h2 {
                 font-size: 18px;
+                line-height: 27px;
             }
             p {
                 font-size: 12px;
@@ -409,9 +408,11 @@
             }    
             h2 {
                 font-size: 18px;
+                line-height: 27px;
             }
             h4 {
                 font-size: 12px;
+                line-height: 36px;
             }
         }
         .slide-5 {
@@ -425,6 +426,7 @@
         .slide-6 {
             h1 {
                 font-size: 26px;
+                line-height: 26px;
             }
             p {
                 margin: 0;

@@ -9,7 +9,6 @@
     font-weight: 600;
 
     .previous, .next {
-        display: flex;
         position: relative;
         &:hover {
             text-decoration: underline;
@@ -20,7 +19,6 @@
 
         &::before {
             @include arrow(7px, 4px, $color-shadow, left);
-            align-self: center;
             left: 0;
         }
     }
@@ -36,11 +34,13 @@
 }
 .two-columns {
     padding: 30px 0 50px;
-    h1 {
-        font-size: 48px;
-        text-transform: uppercase;
+    .title {
         width: 50%;
         margin-bottom: 30px;
+        h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+        }
     }
     .col-1 {
         width: 30%;
@@ -105,10 +105,13 @@
         background-color: $color-grey-light;
     }
     .two-columns {
-        h1 {
-            font-size: 30px;
-            font-weight: 600;
+        .title {
             width: 100%;
+            h1 {
+                font-size: 30px;
+                line-height: 45px;
+                font-weight: 600; 
+            }
         }
         .col-1 {
             width: 100%;

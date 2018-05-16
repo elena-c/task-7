@@ -15,11 +15,12 @@
 }
 @mixin arrow($size, $weight, $color, $oriental) {
     content:"";
-    position: absolute;
     transform: rotate(45deg);
     width: $size;
     height: $size;
     border: solid $weight $color;
+    position: absolute;
+
 
     @if $oriental == up {
         border-right: none;
@@ -28,7 +29,8 @@
     @if $oriental == left {
         border-right: none;
         border-top: none;
-        align-self: center;
+        top: 50%;
+        transform: translatey(-50%) rotate(45deg);
     }
     @if $oriental == down {
         border-left: none;
@@ -37,7 +39,8 @@
     @if $oriental == right {
         border-left: none;
         border-bottom: none;
-        align-self: center;
+        top: 50%;
+        transform: translatey(-50%) rotate(45deg);
     }
 }
 @mixin arrow-border ($color: $color-white) {

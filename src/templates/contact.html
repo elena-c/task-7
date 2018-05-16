@@ -5,12 +5,12 @@
     
 {% include "partials/_header.html" %}
     <div id="content">
-        <div class="breadcrumbs">
-            <a href="index.html">Home</a>
-            <span>Contact</span>
-        </div>
+        <ul class="breadcrumbs">
+            <li><a href="index.html">Home</a></li>
+            <li>Contact</li>
+        </ul>
         <div class="contact-inform pierce-white">
-            <h2>L'ETS TALK!</h2>
+            <h1>L'ETS TALK!</h1>
             <P>Approachable and friendly, we welcome the opportunity to chat about how we can help you get more from your digital project. Whether you want a free, no obligation consultation or just a quick chat please give us a call on 
                 <a href="callto:01234 567 890">01234 567 890</a> 
             </P>
@@ -22,27 +22,12 @@
                     <h2>Make an enquiry.</h2>
                     <h2>We’ll reply today - we promise!</h2>
                 </div>
-                <div class="form-group">
-                    <textarea class="field" cols="30" rows="10" required></textarea>
-                    <label>How can we help <span>*</span></label>
-                </div>
+                <textarea class="field" cols="30" rows="10" required placeholder="How can we help *"></textarea>
                 <div class="flex">
-                    <div class="form-group">
-                        <input class="field" type="text" required>
-                        <label>Name <span>*</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input class="field" type="text">
-                        <label>Company</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="field" type="email" required>
-                        <label>Email address <span>*</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input class="field" type="tel" required>
-                        <label>Telephone <span>*</span></label>
-                    </div>
+                    <input class="field" type="text" required placeholder="Name *">
+                    <input class="field" type="text" placeholder="Company">
+                    <input class="field" type="email" required placeholder="Email address *">
+                    <input class="field" type="tel" required placeholder="Telephone *">
                 </div>
                 <div class="flex-wrap-reverse">
                     <p>Fields marked with <span>*</span> are mandatory</p>
@@ -57,15 +42,12 @@
             </div>
             <p>Need Directions? Tell us where you’re traveling from...</p>
             <div class="form-group">
-                <input class="field" type="text">
-                <label>Your postcode</label>
+                <input class="field" type="text" placeholder="Your postcode">
                 <button></button>
             </div>
-
         </div>
         <div class="map-block">
-            <div class="map">
-                <img src="../assets/images/map.png" alt="map">
+            <div class="map" id="map">
             </div>
         </div>
         <div class="two-columns flex">
@@ -93,3 +75,7 @@
     </div>    <!-- / content -->
 
 {% include "partials/_footer.html" %}
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-3rK2-lItH56VD2-EzzpTLR-JM1SWQa0&callback=initMap">
+</script>
