@@ -1,0 +1,273 @@
+.heading-blog {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+.blog {
+    width: 60%;
+    margin-bottom: 50px;
+
+    a:hover {
+        text-decoration: underline;
+    }
+    .post{
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: solid 1px $color-shadow;
+
+        .flex-wrap-reverse{
+            font-size: 11px;
+            line-height: 18px;
+            align-items: flex-end;
+
+            .col-1 {
+                width: 20%;
+                padding-top: 45px;
+                text-align: right;
+                p {
+                    margin-bottom: 0;
+                }
+                strong {
+                    font-weight: 700;
+                }
+            }
+            .col-2 {
+                width: 75%;
+                h2 {
+                    font-size: 18px;
+                    line-height: 25px;
+                    margin-bottom: 20px;
+                }
+                .more {
+                    color: $color-red;
+                    font-size: 14px;
+                    &::after {
+                        border-color: $color-red;
+                        height: 6px;
+                        width: 6px;
+                        border-width: 3px;
+                    }
+                }
+            }
+        }
+    }
+    .standard-post {
+        img {
+            vertical-align: top;
+            margin-bottom: 30px;
+        }
+        .col-1 {
+            @include bg-post(standard-post);
+        }
+    }
+    .gallery-post {
+        .gallery-post-slides {
+            overflow-X: hidden;
+            position: relative;
+            margin-bottom: 30px;
+
+            img {
+                flex-shrink: 0;
+                height: 100%;
+            }
+            .pagination {
+                position: absolute;
+                top: 10px;
+                left: 80%;
+                z-index: 1;
+            }
+            .swiper-pagination-bullet {
+                background: $color-white;
+                opacity: 0.7;
+            }
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+        }
+        .col-1 {
+            @include bg-post(gallery-post);
+        }
+    }
+    .video-post {
+        video {
+            margin-bottom: 30px;
+        }
+        .col-1 {
+            @include bg-post(video-post);
+        }
+    }
+    .link-post, .aside-post {
+        .col-1 {
+            @include bg-post(link-post);
+        }
+    }
+    .audio-post {
+        .col-1 {
+            @include bg-post(audio-post);
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+    .quote-post {
+        .col-1 {
+            @include bg-post(quote-post);
+        }
+        .col-2 {
+            padding: 20px 60px 30px;
+            background: url(../images/quote.png) 20px 20px no-repeat, $color-grey-light;
+            blockquote {
+                font-size: 15px;
+                line-height: 23px;
+                font-style: italic;
+            }
+        }
+    }
+    .page-switch {
+        position: relative;
+        .numbers {
+            a {
+                margin-right: 5px;
+            }
+            .active {
+                color: $color-black;
+            }
+        }
+    }
+}
+aside {
+    width: 30%;
+    a {
+        font-size: 12px;
+        font-weight: 700;
+        &:hover {
+            text-decoration: underline;
+        }  
+    }
+
+    .panel {
+        margin-bottom: 50px;
+        h3{
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 800;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $color-shadow;
+            margin-bottom: 15px;
+        }
+        li{
+            position: relative;
+            padding-left: 20px;
+            &::before {
+                @include arrow (6px, 2px, $color-shadow, right);
+                left: 0;
+            }
+        }
+        .tags {
+            justify-content: flex-start;
+            a {
+                margin-right: 10px;
+            }
+        }
+        .twit-block {
+            margin-bottom: 30px;
+            .icon {
+                align-self: flex-start;
+                padding: 7px 7px 5px;
+                background-color: $color-grey-light;
+                border-radius: 3px;
+                transition-duration: 0.5s;
+    
+                &:hover {
+                    background-color: #55acee;
+                    img {
+                        filter: invert(100%) brightness(300%);  
+                    } 
+                }
+                img {
+                    transition-duration: 0.5s;
+                }
+            }
+            .twit {
+                width: 80%;
+                p {
+                    font-size: 13px;
+                    font-style: italic;
+                    margin: 0;
+                }
+                a {
+                    font-size: 13px;
+                    font-style: italic;
+                    font-weight: 400;
+                    color: $color-grey-dark;
+                }
+                .inside {
+                    font-weight: 600;
+                }
+                .time-ago {
+                    font-size: 10px;
+                    color: $color-shadow;
+                }
+            }  
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .heading-blog {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 30px;
+
+    }
+    .blog {
+        width: 100%;
+        .post {
+            margin: 0 -10px 30px;
+            padding: 0 10px 30px;
+            .flex-wrap-reverse{
+                .col-1{
+                    width: 100%;
+                    padding: 0 0 0 45px;
+                    text-align: left;
+                    background-position: top left;
+                } 
+                .col-2 {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    p {
+                        display: inline;
+                    }
+                    .more {
+                        font-size: 11px;
+                        padding-right: 10px;
+                        &::after {
+                            height: 4px;
+                            width: 4px;
+                            border-width: 2px;
+                        }
+                    }
+                }
+            }
+        }
+        .page-switch {
+            margin-top: 50px;
+            justify-content: space-between;
+            .numbers {
+                position: absolute;
+                top: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    aside {
+        width: 100%;
+        .panel {
+            h3 {
+                margin: 0 -10px 15px;
+                padding: 0 10px 20px;
+            }
+        }
+    }
+}

@@ -76,6 +76,18 @@ $(document).ready(function(){
         },
         },
     })
+    new Swiper ('.gallery-post-slides', {
+        slideClass: 'img-slide',
+        autoplay: true,
+        pagination: {
+        el: '.pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+        },
+        },
+    })
+
     $('.figure-gallery').each((i, el) => {
         new Swiper (el, {
             slideClass: 'slide-img',

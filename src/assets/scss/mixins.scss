@@ -1,6 +1,9 @@
 @mixin banner($i){
    background: url("../images/banner#{$i}.png") center top/cover no-repeat;
 }
+@mixin bg-post($i){
+    background: url("../images/#{$i}.png") right top no-repeat;
+}
 
 @mixin arrow-down($color){
     content:"";
