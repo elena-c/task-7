@@ -1,0 +1,120 @@
+{% include "partials/_head.html" %}
+
+
+<div class="page">
+    
+{% include "partials/_header.html" %}
+    <div id="content" class="gallery-post post">
+        <div class="flex">
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li>Bringing iMessage to the desktop</li>
+            </ul>
+            <div class="page-switch mobile-none">
+                <a href="#" class="previous">PREVIOUS</a>
+                <a href="#" class="next">NEXT</a>
+            </div>
+        </div>
+        <h1 class="heading-blog-post">BRINGING IMESSAGE TO THE DESKTOP</h1>
+        <div class="gallery-post-slides">
+            <div class="swiper-wrapper">
+                <img class="img-slide" src="../assets/images/post-img.png" alt="slide">
+                <img class="img-slide" src="../assets/images/post-img1.png" alt="slide">
+                <img class="img-slide" src="../assets/images/post-img.png" alt="slide">
+                <img class="img-slide" src="../assets/images/post-img1.png" alt="slide">
+                <img class="img-slide" src="../assets/images/post-img.png" alt="slide">
+            </div>
+            <div class="pagination"></div>
+        </div>
+        <div class="flex info-social">
+            <div class="post-info">
+                <p><strong>Posted: </strong>9th Nov 2012</p>
+                <p><strong>Tags: </strong><a href="#">Gallery</a></p>
+                <p><strong>Comments: </strong><a href="#">21</a></p>
+            </div>
+            <div class="social">
+                <img src="../assets/images/social.png" alt="social">
+            </div>
+        </div>
+        <div class="flex">
+            <div class="content">
+                <div class="entry-content">
+                    <h2>Sub title to go here</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Sub title to go here</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                </div>
+                <div class="comments">
+                    <h2>Your reactions</h2>
+                    <div class="discussion">
+                        <div class="reply">
+                            <a href="#"><img src="../assets/images/avatar1.png" alt="avatar"></a>
+                            <div class="comment">
+                                <a href="#" class="name">Gary</a>
+                                <em class="date">July 21, 2012 at 2:24 - </em>
+                                <a href="#">Reply</a>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            </div>
+                        </div>
+                        <div class="reply">
+                            <a href="#"><img src="../assets/images/avatar2.png" alt="avatar"></a>
+                            <div class="comment">
+                                <a href="#" class="name">Nick</a>
+                                <em class="date">July 21, 2012 at 2:25 - </em>
+                                <a href="#">Reply</a>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
+                            </div>
+                        </div>
+                        <div class="reply">
+                            <a href="#"><img src="../assets/images/avatar1.png" alt="avatar"></a>
+                            <div class="comment">
+                                <a href="#" class="name">Gary</a>
+                                <em class="date">July 21, 2012 at 2:26 - </em>
+                                <a href="#">Reply</a>
+                                <p>Sed ut perspiciatis unde omnis iste natus error.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discussion">
+                        <div class="reply">
+                            <a href="#"><img src="../assets/images/avatar1.png" alt="avatar"></a>
+                            <div class="comment">
+                                <a href="#" class="name">Gary</a>
+                                <em class="date">July 21, 2012 at 2:24 - </em>
+                                <a href="#">Reply</a>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- / comments -->
+                <form class="comment-form">
+                    <h2>Leave a comment</h2>
+                    <textarea class="field" cols="30" rows="10" required placeholder="Your comment"></textarea>
+                    <div class="flex">
+                        <input class="field" type="text" required placeholder="Your name *">
+                        <input class="field" type="email" required placeholder="Your email *">
+                    </div>
+                    <div class="flex-wrap-reverse">
+                        <p>Fields marked with <span>*</span> are mandatory</p>
+                        <button class="btn-red">ADD COMMENT</button>
+                    </div>
+                </form>
+            </div>  <!-- / content -->
+            <aside>
+                <div class="panel">
+                    <h3>LATEST POST</h3>
+                    <ul>
+                        <li><a href="#">Example Blog Posts</a></li>
+                        <li><a href="#">Example Blog Posts</a></li>
+                        <li><a href="#">Example Blog Posts</a></li>
+                        <li><a href="#">Example Blog Posts</a></li>
+                        <li><a href="#">Example Blog Posts</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div> <!-- / flex -->
+    </div>    <!-- / content -->
+
+    {% include "partials/_footer.html" %}
