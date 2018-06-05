@@ -1,0 +1,186 @@
+.member {
+    .team-banner-bg {
+        img {
+            margin: 10px 0 0 50%;
+        }
+    }
+    .member-info {
+        position: absolute;
+        top: 80px;
+        width: 50%;
+        h1 {
+            margin-bottom: 25px;
+        }
+        h3 {
+            color: darken($color-shadow, 10%);
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .text {
+            width: 65%;
+        }
+    }
+    .greeting {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        margin-left: 30px;
+        width: 100px;
+        font: 40px/45px 'Gochi Hand';
+        transform: rotate(-15deg);
+        p{
+            text-align: center;
+            color: $color-black;
+        }
+    }
+}
+.member-content {
+    margin-bottom: 70px;
+    .member-about {
+        width: 65%;
+        h2 {
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            font-size: 21px;
+        }
+        
+    }
+    .member-sidebar {
+        width: 30%;
+        .contact-social {
+            padding: 35px 20px;
+            background: url(../images/contact-bg.png) left top/100% 100% no-repeat;
+            margin-bottom: 50px;
+        }
+        .contact {
+            font-size: 12px;
+            line-height: 12px;
+            margin-bottom: 25px;
+            h3 {
+                font-size: 15px;
+                line-height: 15px;
+            }
+            .link {
+                display: flex;
+                width: 100%;
+                margin-bottom: 15px;
+                h4 {
+                    font-size: 12px;
+                    line-height: 12px;
+                    margin-right: 10px;
+                }
+                .email {
+                    text-decoration: underline;
+                    &:hover {
+                        color: $color-red;
+                    }
+                }
+                .number {
+                    font-weight: 700;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .social{
+            a{
+                margin-left: 3px;
+    
+                &:hover img{
+                    transform: scale(1.1);
+                }
+                img{
+                    transition-duration: 0.3s;
+                }
+            }
+        }    
+        .twit-block {
+            h3 {
+                font-size: 15px;
+                line-height: 20px;
+                margin-bottom: 20px;
+            }
+            .icon {
+                background: $color-white;
+                padding: 7px 7px 0;
+                &:hover {
+                    background-color: #55acee;
+                }        
+            }
+            .twit {
+                width: 85%;
+                p {
+                    a {
+                        color: $color-red;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .member {
+        .breadcrumbs {
+            position: relative;
+            border-bottom: none;
+            padding: 11px 0 20px;
+            margin: 0;
+        }
+        .page-switch {
+            margin-bottom: 3px;
+        }   
+        .team-banner-bg {
+            margin: 0 -20px 35px;
+            padding: 0 20px;
+        }
+        
+        .greeting {
+            top: 40px;
+            left: 10%;
+        }
+        .member-info {
+            position: static;
+            width: 100%;
+            h1 {
+                font-size: 24px;
+                line-height: 30px;
+                margin-bottom: 15px;
+            }
+            h3 {
+                font-size: 14px;
+            }
+            .text {
+                width: 100%;
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+        .member-content {
+            margin-bottom: 10px;
+            .member-about {
+                width: 100%;
+                h2 {
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+                p {
+                    font-size: 14px;
+                    line-height: 24px;   
+                }
+            }
+            .member-sidebar {
+                width: 100%;
+                .contact-social {
+                    margin: 0 15px 50px;
+                }
+            }
+        }
+    }
+}
+

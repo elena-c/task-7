@@ -44,7 +44,6 @@ body, html {
 		display: inline-block;
 		
 	}
-
 	a {
 	position: relative;
 	color: $color-shadow;
@@ -58,7 +57,9 @@ body, html {
 		}
 	}
 }
-
+.desktop-none {
+	display: none;
+}
 
 @media screen and (max-width: $tablet) {
 	body,html {
@@ -77,5 +78,8 @@ body, html {
 	}
 	.mobile-none {
         display: none;
-    }
+	}
+	.desktop-none {
+		display: flex;
+	}
 }

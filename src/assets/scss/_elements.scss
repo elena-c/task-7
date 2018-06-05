@@ -96,6 +96,81 @@ a {
 input.field {
     height: 15px;
 }
+.page-switch {
+    position: relative;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+    color: $color-shadow;
+    font-size: 18px;
+    font-weight: 600;
+
+    .previous, .next {
+        position: relative;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .previous {    
+        padding-left: 20px;
+
+        &::before {
+            @include arrow(7px, 4px, $color-shadow, left);
+            left: 0;
+        }
+    }
+    .next {
+        padding-right: 20px;
+
+        &::before {
+            @include arrow(7px, 4px, $color-shadow, right);
+            align-self: center;
+            right: 0;
+        }
+    }
+    .numbers {
+        a {
+            margin-right: 5px;
+        }
+        .active {
+            color: $color-black;
+        }
+    }
+}
+.page-switch-mini {
+    position: absolute;
+    right: 30px;
+    top: 35px;
+    z-index: 1;
+    display: flex;
+    width: 35px;
+    justify-content: space-between;
+    .previous {
+        position: relative;
+        &::before {
+        @include arrow(10px, 5px, $color-white, left);
+        transition: 0.3s;
+        }
+        &:hover {
+            &::before {
+                border-color: $color-red;
+            }
+        }
+    }
+    .next {
+        position: relative;
+        &::after {
+        transition: 0.3s;
+        @include arrow(10px, 5px, $color-white, right);
+        }
+        &:hover {
+            &::after {
+                border-color: $color-red;
+            }
+        }
+    }
+}
 @media screen and (max-width: $mobile) {
     .more {
         font-size: 14px;
@@ -103,6 +178,12 @@ input.field {
         &::after {
             @include arrow(6px, 3px, $color-white, right);
         }    
+    }
+    .page-switch {
+        margin: 0 -10px;
+        padding: 10px 20px;
+        flex-grow: 1;
+        background-color: $color-grey-light;
     }
 }
 

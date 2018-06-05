@@ -1,0 +1,79 @@
+.team {
+    position: relative;
+    img {
+        vertical-align: top;
+    }
+    .breadcrumbs {
+        position: absolute;
+        z-index: 1;   
+    }
+    .title {
+        position: absolute;
+        top: 100px;
+        width: 50%;
+        z-index: 1;
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 48px;
+        font-weight: 900;
+    }   
+}
+.team-banner-info {
+    margin-top: 340px;
+    width: 40%;
+    margin-bottom: 100px;
+
+    h3 {
+        color: darken($color-shadow, 10%);
+        font-size: 15px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    p {
+        margin-bottom: 35px;
+    }
+}
+.team-banner-bg {
+    align-items: flex-end;
+    position: relative;
+    background: linear-gradient($color-grey-light, $color-shadow);
+    margin: 0 -9999px 35px;
+    padding: 0 9999px;
+    @include arrow-border;
+    img {
+        width: 55%;
+        height: 100%;
+        margin: 20px -55px 0 0;
+    }
+}
+@media screen and (max-width: $mobile) {
+    .team {
+        .breadcrumbs {
+            position: relative;
+            border-bottom: solid 5px $color-grey-light;
+            padding: 0 20px 20px;
+            margin: 11px -20px 40px;
+        }
+        .title {
+            position: relative;
+            width: 100%;
+            top: 0;
+    
+            h1 {
+                font-size: 30px;
+                line-height: 40px;
+                margin-bottom: 40px;
+            }   
+        }
+    }
+    .team-banner-bg {
+        img {
+            margin: 0 0 0 40%;
+        }
+    }
+}

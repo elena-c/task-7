@@ -107,6 +107,9 @@ header {
 	right: 0;
 	border: none;
 }
+.team header{
+	border: none;
+}
 @media screen and (max-width: $tablet-portrait) {
 	header {
         background-color: $color-white;
